@@ -8,21 +8,13 @@ const CounterContainer = ({number, increase, decrease}) => {
     return <Counter number={number} onIncrease={increase} onDecrease={decrease}/>
 };
 
-const mapStateToProps = state => ({
-    number: state.counter.number
-});
-
-const mapDispatchToProps = dispatch => ({
-    increase: () => {
-        dispatch(increase());
-    },
-    decrease: () => {
-        dispatch(decrease());
-    }
-})
-
 // 컨테이너 컴포넌트를 리덕스와 연동하기 위해서는 connect 함수를 사용해야한다
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(CounterContainer);
+    (sta) => ({
+        number: sta.counter.number,
+    }),
+    {
+        increase,
+        decrease
+    }
+)(CounterContainer)
