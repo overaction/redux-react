@@ -1,1 +1,2 @@
-#yarn add react-redux
+#yarn add redux react-redux
+#yarn add redux-devtools-extension
