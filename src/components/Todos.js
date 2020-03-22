@@ -48,7 +48,6 @@ const Todos = ({
                 ))}
             </div>
         </div>
-        
     )
 }
 
