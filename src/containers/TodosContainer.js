@@ -54,10 +54,10 @@ const TodosContainer = () => {
         <Todos
             input={input}
             todos={todos}
-            onChangeInput={changeInput}
-            onInsert={insert}
-            onToggle={toggle}
-            onRemove={remove}
+            onChangeInput={onChangeInput}
+            onInsert={onInsert}
+            onToggle={onToggle}
+            onRemove={onRemove}
         />
     )
 };
