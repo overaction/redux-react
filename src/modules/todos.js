@@ -94,19 +94,19 @@ function todos(state=initialState, action) {
 const todos = handleActions(
     {
         [CHANGE_INPUT]: (state,{payload : input}) => ({...state, input: input}), //객체 비구조화 할당
-        [INSERT]: (state,action) => ({
+        [INSERT]: (state,{payload : todoo}) => ({
             ...state,
-            todos: state.todos.concat(action.payload),
+            todos: state.todos.concat(todoo),
         }),
-        [TOGGLE]: (state,action) => ({
+        [TOGGLE]: (state,{payload : id_toggle}) => ({
             ...state,
             todos: state.todos.map(todo =>(
-                todo.id === action.payload ? {...todo, done: !todo.done} : todo
+                todo.id === id_toggle ? {...todo, done: !todo.done} : todo
             ))
         }),
         [REMOVE]: (state,action) => ({
             ...state,
-            todos: state.todos.filter(todo => todo.id != action.payload)
+            todos: state.todos.filter(todo => todo.id !== action.payload)
         })
     },
     initialState
